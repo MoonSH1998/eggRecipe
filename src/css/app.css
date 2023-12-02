@@ -145,14 +145,17 @@
   background-image: url("../images/svg/arrow_right.svg");
 }
 .section.section2 {
-  margin: 1vw 0;
+  margin: 3vw 0;
+  height: 45vw;
+  display: flex;
+  justify-content: center;
 }
 .section.section2 .inner-box {
   display: flex;
 }
 .section.section2 .inner-box .menu_list {
   width: 40%;
-  padding: 107px 0 0 141px;
+  padding: 2vw 0 0 141px;
 }
 .section.section2 .inner-box .menu_list .menu_list_header .title {
   font-family: Helvetica;
@@ -235,8 +238,9 @@
   font-family: Pretendard;
 }
 .section.section2 .inner-box .menu_intro {
-  width: 60%;
-  height: 38.5vw;
+  display: flex;
+  width: 64%;
+  height: 49.5vw;
   background-image: url("../images/svg/section2.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -246,12 +250,27 @@
 .section.section2 .inner-box .menu_intro .menu-image {
   border-radius: 24px;
   background: url("../images/svg/menu1.svg");
-  margin: 10vw 10vw;
+  margin: 10vw 0 0 10vw;
   width: 18.3vw;
   height: 22vw;
   background-repeat: no-repeat;
   background-size: cover;
   flex-shrink: 0;
+}
+.section.section2 .inner-box .menu_intro .menu-desc {
+  padding: 20vw 0 0 1.5vw;
+  font-size: 1.5vw;
+}
+.section.section2 .inner-box .menu_intro .menu-desc div {
+  margin-top: 0.4vw;
+}
+.section.section2 .inner-box .menu_intro .menu-desc .price {
+  font-size: 1vw;
+  margin-left: 1vw;
+}
+.section.section2 .inner-box .menu_intro .menu-desc .desc {
+  width: 22vw;
+  font-size: 1vw;
 }
 .section.section3 {
   height: 20vw;
@@ -410,6 +429,7 @@
 .section.section4 .inner-box .inquire-box .input-box .input1,
 .section.section4 .inner-box .inquire-box .input-box .input2,
 .section.section4 .inner-box .inquire-box .input-box .input3 {
+  justify-self: end;
   display: flex;
   align-items: flex-start;
 }
@@ -428,7 +448,7 @@
 .section.section4 .inner-box .inquire-box .input-box .input2 .inputbox,
 .section.section4 .inner-box .inquire-box .input-box .input3 .inputbox {
   width: 50%;
-  height: 70px;
+  height: 2.8vw;
   border-radius: 15px;
   border: 1px solid var(--main, #a97b50);
   background: #fff;
@@ -438,7 +458,7 @@
   margin-bottom: 2vw;
 }
 .section.section4 .inner-box .inquire-box .input-box .input3 .inputbox {
-  height: 300px;
+  height: 7vw;
 }
 .section.section4 .sendBtn {
   display: flex;
