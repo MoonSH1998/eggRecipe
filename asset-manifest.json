@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/eggRecipe/static/css/main.c03dd7e8.css",
+    "main.js": "/eggRecipe/static/js/main.d54eb03f.js",
+    "static/media/mainSec2.svg": "/eggRecipe/static/media/mainSec2.d7b264552af5d96d24eb.svg",
+    "static/media/mainSec3.svg": "/eggRecipe/static/media/mainSec3.940f7cd428bef2a8d56e.svg",
+    "static/media/mainSec1.svg": "/eggRecipe/static/media/mainSec1.51d51f615ac378abaa8d.svg",
+    "static/media/menu1.svg": "/eggRecipe/static/media/menu1.bd86b78b354d5fee7ea7.svg",
+    "static/media/Section3_2.svg": "/eggRecipe/static/media/Section3_2.8ea1a18e3f956b90e622.svg",
+    "static/media/Section3_1.svg": "/eggRecipe/static/media/Section3_1.8dc38c407f3e41572a85.svg",
+    "static/media/mainLogo.svg": "/eggRecipe/static/media/mainLogo.22f644a4a8a31c3ef7b5.svg",
+    "static/media/Section3_4.svg": "/eggRecipe/static/media/Section3_4.3344e7154500ffa1f4a3.svg",
+    "static/media/Section3_3.svg": "/eggRecipe/static/media/Section3_3.d47d31f3fbb03022ed40.svg",
+    "index.html": "/eggRecipe/index.html",
+    "static/media/section2.svg": "/eggRecipe/static/media/section2.2f38c89f15683cd49f0d.svg",
+    "static/media/arrow_left.svg": "/eggRecipe/static/media/arrow_left.70f3f20d15ea311065f6.svg",
+    "static/media/arrow_right.svg": "/eggRecipe/static/media/arrow_right.cf2304cf17484f96deac.svg",
+    "main.c03dd7e8.css.map": "/eggRecipe/static/css/main.c03dd7e8.css.map",
+    "main.d54eb03f.js.map": "/eggRecipe/static/js/main.d54eb03f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c03dd7e8.css",
+    "static/js/main.d54eb03f.js"
+  ]
+}
