@@ -171,6 +171,53 @@ function MenuIntro(props) {
     setMenuNumber(number);
   };
 
+  function checkVal() {
+    let name = document.querySelector(".input1").value;
+    let nameEng = document.querySelector(".input2").value;
+    let price = document.querySelector(".input3").value;
+    price = Number(price);
+    let desc = document.querySelector(".input4").value;
+    if (name.length <= 2) {
+      alert("추가할 메뉴의 이름을 3글자 이상 적어주세요.");
+      return -1;
+    }
+    if (nameEng.length <= 2) {
+      alert("추가할 메뉴의 영문 이름을 3글자 이상 적어주세요.");
+      return -1;
+    }
+    if (desc.length <= 9) {
+      alert("추가할 메뉴의 설명을 10글자 이상 적어주세요.");
+      return -1;
+    }
+
+    if (Number(price) == NaN) {
+      alert("추가할 메뉴의 가격을 제대로 적어주세요.");
+      return -1;
+    }
+  }
+  const addMenu = () => {
+    if (checkVal() == -1) {
+      return;
+    }
+    let name = document.querySelector(".input1").value;
+    let nameEng = document.querySelector(".input2").value;
+    let price = document.querySelector(".input3").value;
+    price = Number(price);
+    let desc = document.querySelector(".input4").value;
+
+    // let data = new Array();
+    let coffeeJson = {
+      name: name,
+      nameEng: nameEng,
+      price: price,
+      desc: desc,
+    };
+    coffeeList.push(coffeeJson);
+
+    setMenuList((prevMenuList) => prevMenuList + 1);
+    setMenuNumber(number);
+  };
+
   useEffect(() => {
     setNumber(props.initNumber);
   }, [props.initNumber]);
@@ -183,17 +230,39 @@ function MenuIntro(props) {
         <div className="nameKor">
           {coffeeList[number]?.name}
           <span className="price">{coffeeList[number]?.price}원</span>
+          <div className="changePrice">
+            <div className="p100" onClick={() => changePrice(number, 1)}>
+              +100
+            </div>
+            <div className="m100" onClick={() => changePrice(number, -1)}>
+              -100
+            </div>
+          </div>
         </div>
         <div className="desc">{coffeeList[number]?.desc}</div>
         <div className="delBtn" onClick={() => deleteMenu2(number)}>
           삭제하기
         </div>
-        <div className="changePrice">
-          <div className="p100" onClick={() => changePrice(number, 1)}>
-            +100
+
+        <div className="addMenu">
+          <div className="addMenuName">
+            <span>이름</span>
+            <input className="input1"></input>
           </div>
-          <div className="m100" onClick={() => changePrice(number, -1)}>
-            -100
+          <div className="addMenuNameEng">
+            <span>영어이름</span>
+            <input className="input2"></input>
+          </div>
+          <div className="addMenuPrice">
+            <span>가격</span>
+            <input className="input3"></input>
+          </div>
+          <div className="addMenudesc">
+            <span>설명</span>
+            <input className="input4"></input>
+          </div>
+          <div className="addMenuName" onClick={() => addMenu()}>
+            추가하기
           </div>
         </div>
       </div>
