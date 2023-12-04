@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 function Section2() {
   const [menuNumber, setMenuNumber] = useState(0);
   const [menuList, setMenuList] = useState(coffeeList.length);
+  const [isAdmin, setAdmin] = useState(-1);
 
   return (
     <div className="section section2">
@@ -12,12 +13,22 @@ function Section2() {
         setMenuNumber={setMenuNumber}
         menuList={menuList}
         setMenuList={setMenuList}
+        isAdmin={isAdmin}
+        setAdmin={setAdmin}
       />
     </div>
   );
 }
+
 function Menu1(props) {
-  const { menuNumber, menuList, setMenuList, setMenuNumber } = props;
+  const {
+    menuNumber,
+    menuList,
+    setMenuList,
+    setMenuNumber,
+    isAdmin,
+    setAdmin,
+  } = props;
 
   const rendering = () => {
     const result = [];
@@ -42,6 +53,8 @@ function Menu1(props) {
                   setMenuNumber={setMenuNumber}
                   menuList={menuList}
                   setMenuList={setMenuList}
+                  isAdmin={isAdmin}
+                  setAdmin={setAdmin}
                 />
               ) : (
                 <Menu
@@ -49,17 +62,22 @@ function Menu1(props) {
                   setMenuNumber={setMenuNumber}
                   menuList={menuList}
                   setMenuList={setMenuList}
+                  isAdmin={isAdmin}
+                  setAdmin={setAdmin}
                 />
               )}
             </div>
           </div>
         </div>
+
         {MenuIntro ? (
           <MenuIntro
             initNumber={menuNumber}
             setMenuNumber={setMenuNumber}
             menuList={menuList}
             setMenuList={setMenuList}
+            isAdmin={isAdmin}
+            setAdmin={setAdmin}
           ></MenuIntro>
         ) : (
           <MenuIntro
@@ -67,6 +85,8 @@ function Menu1(props) {
             setMenuNumber={setMenuNumber}
             menuList={menuList}
             setMenuList={setMenuList}
+            isAdmin={isAdmin}
+            setAdmin={setAdmin}
           ></MenuIntro>
         )}
       </div>
@@ -150,7 +170,32 @@ function MenuIntro(props) {
   console.log(props);
 
   const [number, setNumber] = useState(props.initNumber);
-  const { menuNumber, setMenuNumber, menuList, setMenuList } = props;
+  const {
+    menuNumber,
+    setMenuNumber,
+    menuList,
+    setMenuList,
+    isAdmin,
+    setAdmin,
+  } = props;
+
+  const changeAdmin = () => {
+    if (isAdmin == -1) {
+      // login();
+      setAdmin(1);
+    } else {
+      setAdmin(-1);
+    }
+
+    // coffeeList.splice(number, 1);
+    // setMenuList((prevMenuList) => prevMenuList - 1);
+
+    // setMenuNumber(number);
+
+    // if (document.querySelector(".col > .sel") != null)
+    //   document.querySelector(".col > .sel").classList.remove("sel");
+    // document.querySelector(".menu" + number).classList.add("sel");
+  };
 
   const deleteMenu2 = (number) => {
     coffeeList.splice(number, 1);
@@ -224,6 +269,7 @@ function MenuIntro(props) {
 
   return (
     <div className="menu_intro">
+      <div className="loginAdmin" onClick={() => changeAdmin()}></div>
       <div className="menu-image"></div>
       <div className="menu-desc">
         <div className="nameEng">{coffeeList[number]?.nameEng}</div>
@@ -271,6 +317,7 @@ function MenuIntro(props) {
 }
 MenuIntro.propTypes = {
   initNumber: PropTypes.number.isRequired,
+  isAdmin: PropTypes.number,
 };
 
 Menu1.propTypes = {
@@ -278,11 +325,13 @@ Menu1.propTypes = {
   initNumber: PropTypes.number,
   number: PropTypes.number,
   menuList: PropTypes.number,
+  isAdmin: PropTypes.number,
 };
 
 Menu.propTypes = {
   menuNumber: PropTypes.number,
   menuList: PropTypes.number,
+  isAdmin: PropTypes.number,
 };
 
 Section2.prototype = {

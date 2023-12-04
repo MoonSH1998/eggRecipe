@@ -519,4 +519,12 @@
   right: 0;
   width: 20vw;
   height: 1.5vw;
-}/*# sourceMappingURL=App.css.map */
+}
+
+.loginAdmin {
+  position: absolute;
+  left: 0;
+  top: 1vw;
+  width: 11vw;
+  height: 4vw;
+}/*# sourceMappingURL=app.css.map */
